@@ -1,0 +1,9 @@
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Memos.Administration\bin\Debug\Memos.Administration.dll
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Memos.Administration\bin\Debug\Memos.Administration.pdb
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Memos.Administration\bin\Debug\Memos.Framework.dll
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Memos.Administration\bin\Debug\log4net.dll
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Memos.Administration\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Memos.Administration\bin\Debug\Memos.Framework.pdb
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Memos.Administration\obj\Debug\ResolveAssemblyReference.cache
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Memos.Administration\obj\Debug\Memos.Administration.dll
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Memos.Administration\obj\Debug\Memos.Administration.pdb

@@ -1,0 +1,17 @@
+F:\Project Development\MM\Mywork\Canon\Source\trunk\CanonImportService\bin\Debug\CanonImportService.exe.config
+F:\Project Development\MM\Mywork\Canon\Source\trunk\CanonImportService\bin\Debug\CanonImportService.exe
+F:\Project Development\MM\Mywork\Canon\Source\trunk\CanonImportService\bin\Debug\CanonImportService.pdb
+F:\Project Development\MM\Mywork\Canon\Source\trunk\CanonImportService\bin\Debug\Canon.Data.dll
+F:\Project Development\MM\Mywork\Canon\Source\trunk\CanonImportService\bin\Debug\log4net.dll
+F:\Project Development\MM\Mywork\Canon\Source\trunk\CanonImportService\bin\Debug\Memos.Framework.dll
+F:\Project Development\MM\Mywork\Canon\Source\trunk\CanonImportService\bin\Debug\Memos.Import.dll
+F:\Project Development\MM\Mywork\Canon\Source\trunk\CanonImportService\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\Project Development\MM\Mywork\Canon\Source\trunk\CanonImportService\bin\Debug\Canon.Data.pdb
+F:\Project Development\MM\Mywork\Canon\Source\trunk\CanonImportService\bin\Debug\Memos.Import.pdb
+F:\Project Development\MM\Mywork\Canon\Source\trunk\CanonImportService\bin\Debug\Memos.Framework.pdb
+F:\Project Development\MM\Mywork\Canon\Source\trunk\CanonImportService\obj\Debug\ResolveAssemblyReference.cache
+F:\Project Development\MM\Mywork\Canon\Source\trunk\CanonImportService\obj\Debug\CanonImportService.CanonImportService.resources
+F:\Project Development\MM\Mywork\Canon\Source\trunk\CanonImportService\obj\Debug\CanonImportService.ProjectInstaller.resources
+F:\Project Development\MM\Mywork\Canon\Source\trunk\CanonImportService\obj\Debug\CanonImportService.csproj.GenerateResource.Cache
+F:\Project Development\MM\Mywork\Canon\Source\trunk\CanonImportService\obj\Debug\CanonImportService.exe
+F:\Project Development\MM\Mywork\Canon\Source\trunk\CanonImportService\obj\Debug\CanonImportService.pdb

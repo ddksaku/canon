@@ -1,0 +1,463 @@
+<%-- Header images --%>
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="LogoImage"
+	ImageUrl="~/App_Themes/Default/Images/logo.gif"
+	CssClass="logo-image" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="SendEmail"
+	ImageUrl="~/App_Themes/Default/Images/send-mail.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="ChangePassword"
+	ImageUrl="~/App_Themes/Default/Images/change-password.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="LanguageEn"
+	ImageUrl="~/App_Themes/Default/Images/language-en.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="LanguageCz"
+	ImageUrl="~/App_Themes/Default/Images/language-cz.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="Previous"
+	ImageUrl="~/App_Themes/Default/Dev/Images/edtCalendarPrevMonth.gif" />
+	
+<dev:ASPxImage
+	runat="server"
+	SkinID="Next"
+	ImageUrl="~/App_Themes/Default/Dev/Images/edtCalendarNextMonth.gif" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="LanguageDe"
+	ImageUrl="~/App_Themes/Default/Images/language-de.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="Actualization"
+	ImageUrl="~/App_Themes/Default/Images/warning.gif" />
+
+<%-- Menu --%>
+
+<asp:HyperLink
+	runat="server"
+	SkinID="Menu"
+	CssClass="menu-link" />
+
+<asp:LinkButton
+	runat="server"
+	SkinID="Menu"
+	CssClass="menu-link" />
+
+<%-- Icons --%>
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="StateActive"
+	ImageUrl="~/App_Themes/Default/Images/state-active.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="StateInactive"
+	ImageUrl="~/App_Themes/Default/Images/state-inactive.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="LanguageSmallEn"
+	ImageUrl="~/App_Themes/Default/Images/language-small-en.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="LanguageSmallCz"
+	ImageUrl="~/App_Themes/Default/Images/language-small-cz.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="LanguageSmallDe"
+	ImageUrl="~/App_Themes/Default/Images/language-small-de.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="CrownSmallSystemAdministrator"
+	ImageUrl="~/App_Themes/Default/Images/crown-small-sa.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="CrownSmallCompanyAdministrator"
+	ImageUrl="~/App_Themes/Default/Images/crown-small-ca.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="CrownSmallUser"
+	ImageUrl="~/App_Themes/Default/Images/crown-small-user.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="PhoneCellular"
+	ImageUrl="~/App_Themes/Default/Images/phone-cellular.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="PhoneHome"
+	ImageUrl="~/App_Themes/Default/Images/phone-home.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="MessageSuccess"
+	ImageUrl="~/App_Themes/Default/Images/message_success.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="MessageError"
+	ImageUrl="~/App_Themes/Default/Images/message_error.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="ImageAdd"
+	Cursor="pointer"
+	ImageUrl="~/App_Themes/Default/Images/link-add.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="ImageInfo"
+	Cursor="pointer"
+	ImageUrl="~/App_Themes/Default/Images/link-info.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="ImageRemove"
+	Cursor="pointer"
+	ImageUrl="~/App_Themes/Default/Images/link-remove.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="ImageDetails"
+	Cursor="pointer"
+	ImageUrl="~/App_Themes/Default/Images/link-details.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="ImageScheduler"
+	Cursor="pointer"
+	ImageUrl="~/App_Themes/Default/Images/link-scheduler.png" />
+
+<%-- Cooperation states images --%>
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="CooperationSet"
+	ImageUrl="~/App_Themes/Default/Images/cooperation-set.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="CooperationDenied"
+	ImageUrl="~/App_Themes/Default/Images/cooperation-denied.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="CooperationSent"
+	ImageUrl="~/App_Themes/Default/Images/cooperation-sent.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="CooperationReceived"
+	ImageUrl="~/App_Themes/Default/Images/cooperation-received.png" />
+
+<dev:ASPxImage
+	runat="server"
+	SkinID="CooperationNo"
+	ImageUrl="~/App_Themes/Default/Images/cooperation-no.png" />
+
+<%-- Dev Express controls --%>
+
+<dev:ASPxButton
+	runat="server"
+	CssPostfix="Soft_Orange"
+	CssFilePath="~/App_Themes/Default/Dev/styles.css" />
+
+<dev:ASPxCallbackPanel
+	runat="server"
+	CssPostfix="Soft_Orange" 
+	CssFilePath="~/App_Themes/Default/Dev/styles.css" 
+	ImageFolder="~/App_Themes/Default/Dev/Images/"
+	LoadingPanelText="" />
+
+<dev:ASPxCheckBox
+	runat="server"
+	CssPostfix="Soft_Orange"
+	CssFilePath="~/App_Themes/Default/Dev/styles.css" />
+
+<dev:ASPxComboBox
+	runat="server"
+	CssPostfix="Soft_Orange"
+	ImageFolder="~/App_Themes/Default/Dev/Images/"
+	CssFilePath="~/App_Themes/Default/Dev/styles.css"
+	LoadingPanelText="">
+	<ValidationSettings>
+		<ErrorFrameStyle ImageSpacing="4px">
+			<ErrorTextPaddings PaddingLeft="4px" />
+		</ErrorFrameStyle>
+		<ErrorImage Url="~/App_Themes/Default/Dev/Images/edtError.png" Height="14px" Width="14px" />
+	</ValidationSettings>
+	<ButtonStyle Cursor="pointer" Width="11px" />
+</dev:ASPxComboBox>
+
+<Canon:CanonComboBox
+	runat="server"
+	CssPostfix="Soft_Orange"
+	ImageFolder="~/App_Themes/Default/Dev/Images/"
+	CssFilePath="~/App_Themes/Default/Dev/styles.css"
+	LoadingPanelText="">
+	<ValidationSettings>
+		<ErrorFrameStyle ImageSpacing="4px">
+			<ErrorTextPaddings PaddingLeft="4px" />
+		</ErrorFrameStyle>
+		<ErrorImage Url="~/App_Themes/Default/Dev/Images/edtError.png" Height="14px" Width="14px" />
+	</ValidationSettings>
+	<ButtonStyle Cursor="pointer" Width="11px" />
+</Canon:CanonComboBox>
+
+<dev:ASPxDateEdit
+	runat="server"
+	CssPostfix="Soft_Orange"
+	ImageFolder="~/App_Themes/Default/Dev/Images/"
+	CssFilePath="~/App_Themes/Default/Dev/styles.css">
+	<ValidationSettings>
+		<ErrorFrameStyle ImageSpacing="4px">
+			<ErrorTextPaddings PaddingLeft="4px" />
+		</ErrorFrameStyle>
+		<ErrorImage Url="~/App_Themes/Default/Dev/Images/edtError.png" Height="14px" Width="14px" />
+	</ValidationSettings>
+	<ButtonStyle Cursor="pointer" Width="11px" />
+	<CalendarProperties ShowClearButton="False">
+		<PrevMonthImage Url="~/App_Themes/Default/Dev/Images/edtCalendarPrevMonth.gif" Width="19px" Height="19px" />
+		<NextMonthImage Url="~/App_Themes/Default/Dev/Images/edtCalendarNextMonth.gif" Width="19px" Height="19px" />
+		<NextYearImage Url="~/App_Themes/Default/Dev/Images/edtCalendarNextYear.gif" Width="23px" Height="19px" />
+		<PrevYearImage Url="~/App_Themes/Default/Dev/Images/edtCalendarPrevYear.gif" Width="23px" Height="19px" />
+		<FooterStyle Spacing="17px" />
+		<HeaderStyle Spacing="1px" />
+	</CalendarProperties>
+</dev:ASPxDateEdit>
+
+<dev:ASPxGridView
+	runat="server"
+	CssPostfix="Soft_Orange"
+	CssFilePath="~/App_Themes/Default/Dev/styles.css">
+    <SettingsPager CurrentPageNumberFormat="{0}">
+        <AllButton>
+            <Image Height="19px" Width="28px" />
+        </AllButton>
+        <NextPageButton>
+            <Image Height="19px" Width="19px" />
+        </NextPageButton>
+        <PrevPageButton>
+            <Image Height="19px" Width="19px" />
+        </PrevPageButton>
+        <FirstPageButton>
+            <Image Height="19px" Width="23px" />
+        </FirstPageButton>
+        <LastPageButton>
+            <Image Height="19px" Width="23px" />
+        </LastPageButton>
+    </SettingsPager>
+    <SettingsLoadingPanel Text="" />
+    <Images ImageFolder="~/App_Themes/Default/Dev/Images/">
+        <PopupEditFormWindowClose Height="18px" Width="18px" />
+        <HeaderSortDown Height="3px" Width="6px" Url="~/App_Themes/Default/Dev/Images/gvHeaderSortDown.png" />
+        <ExpandedButton Height="13px" Width="13px" Url="~/App_Themes/Default/Dev/Images/gvExpandedButton.png" />
+        <CollapsedButton Height="14px" Width="13px" Url="~/App_Themes/Default/Dev/Images/gvCollapsedButton.png" />
+        <HeaderFilter Height="16px" Width="16px" Url="~/App_Themes/Default/Dev/Images/gvHeaderFilter.png" />
+        <DetailCollapsedButton Height="14px" Width="13px" Url="~/App_Themes/Default/Dev/Images/gvCollapsedButton.png" />
+        <DetailExpandedButton Height="13px" Width="13px" Url="~/App_Themes/Default/Dev/Images/gvExpandedButton.png" />
+        <HeaderActiveFilter Height="16px" Width="16px" Url="~/App_Themes/Default/Dev/Images/gvHeaderFilterActive.png" />
+        <HeaderSortUp Height="3px" Width="6px" Url="~/App_Themes/Default/Dev/Images/gvHeaderSortUp.png" />
+        <WindowResizer Url="~/App_Themes/Default/Dev/Images/WindowResizer.png" Width="12px" Height="12px" />
+        <FilterRowButton Width="13px" Height="13px" />
+    </Images>
+    <ImagesEditors>
+        <CalendarPrevYear Url="~/App_Themes/Default/Dev/Images/edtCalendarPrevYear.png" Width="23px" Height="19px" />
+        <CalendarPrevMonth Url="~/App_Themes/Default/Dev/Images/edtCalendarPrevMonth.png" Width="19px" Height="19px" />
+        <CalendarNextMonth Url="~/App_Themes/Default/Dev/Images/edtCalendarNextMonth.png" Width="19px" Height="19px" />
+        <CalendarNextYear Url="~/App_Themes/Default/Dev/Images/edtCalendarNextYear.png" Width="23px" Height="19px" />
+    </ImagesEditors>
+    <Styles CssPostfix="Soft_Orange" CssFilePath="~/App_Themes/Default/Dev/styles.css">
+        <LoadingPanel ImageSpacing="10px" />
+        <Header SortingImageSpacing="5px" ImageSpacing="5px" />
+    </Styles>
+    <Paddings Padding="1px" />
+</dev:ASPxGridView>
+
+<dev:ASPxHyperLink
+	runat="server"
+	CssPostfix="Soft_Orange"
+	CssFilePath="~/App_Themes/Default/Dev/styles.css" />
+
+<dev:ASPxLabel
+	runat="server"
+	CssPostfix="Soft_Orange"
+    CssFilePath="~/App_Themes/Default/Dev/styles.css" />
+
+<dev:ASPxLabel
+	runat="server"
+	CssPostfix="Soft_Orange" 
+	SkinID="AdminPageTitle"
+	ForeColor="#404040" Font-Size="X-Large"
+    CssFilePath="~/App_Themes/Default/Dev/styles.css" />
+
+<dev:ASPxLabel
+	runat="server"
+	CssPostfix="Soft_Orange" 
+	SkinID="LocalTitle"
+	ForeColor="Black" Font-Bold="True"
+    CssFilePath="~/App_Themes/Default/Dev/styles.css" />
+
+<dev:ASPxListBox
+	runat="server"
+	CssPostfix="Soft_Orange"
+	ImageFolder="~/App_Themes/Default/Dev/Images/"
+	CssFilePath="~/App_Themes/Default/Dev/styles.css"
+	LoadingPanelText="">
+	<ValidationSettings>
+		<ErrorFrameStyle ImageSpacing="4px">
+			<ErrorTextPaddings PaddingLeft="4px" />
+		</ErrorFrameStyle>
+		<ErrorImage Url="~/App_Themes/Default/Dev/Images/edtError.png" Height="14px" Width="14px" />
+	</ValidationSettings>
+</dev:ASPxListBox>
+
+<dev:ASPxMemo
+	runat="server"
+	CssPostfix="Soft_Orange"
+	CssFilePath="~/App_Themes/Default/Dev/styles.css">
+	<ValidationSettings>
+		<ErrorFrameStyle ImageSpacing="4px">
+			<ErrorTextPaddings PaddingLeft="4px" />
+		</ErrorFrameStyle>
+		<ErrorImage Url="~/App_Themes/Default/Dev/Images/edtError.png" Height="14px" Width="14px" />
+	</ValidationSettings>
+</dev:ASPxMemo>
+
+<dev:ASPxPageControl
+	runat="server"
+	CssPostfix="Soft_Orange"
+	CssFilePath="~/App_Themes/Default/Dev/styles.css"
+	ImageFolder="~/App_Themes/Default/Dev/Images/"
+	LoadingPanelText=""
+	TabSpacing="3px" 
+	>
+	<Paddings Padding="4px" />
+	<ContentStyle BackColor="#ececec">
+		<Border BorderWidth="3px" BorderStyle="Solid" BorderColor="#d6d6d6" />
+	</ContentStyle>
+</dev:ASPxPageControl>
+
+<dev:ASPxPopupControl
+	runat="server"
+	CloseAction="CloseButton"
+	CssPostfix="Soft_Orange"
+	ImageFolder="~/App_Themes/Default/Dev/Images/"
+	CssFilePath="~/App_Themes/Default/Dev/styles.css">
+	<HeaderStyle>
+	<Paddings PaddingTop="3px" PaddingBottom="3px"></Paddings>
+	</HeaderStyle>
+	<CloseButtonImage Height="18px" Width="18px"></CloseButtonImage>
+	<SizeGripImage Height="12px" Width="12px" />
+</dev:ASPxPopupControl>
+
+<dev:ASPxRadioButton
+	runat="server"
+	CssPostfix="Soft_Orange"
+	CssFilePath="~/App_Themes/Default/Dev/styles.css" />
+
+<dev:ASPxRadioButtonList
+	runat="server"
+	CssPostfix="Soft_Orange"
+	CssFilePath="~/App_Themes/Default/Dev/styles.css" />
+
+<dev:ASPxRoundPanel
+	runat="server"
+	CssPostfix="Soft_Orange"
+	CssFilePath="~/App_Themes/Default/Dev/styles.css">
+    <Border BorderStyle="None" />
+    <ContentPaddings PaddingTop="10px" PaddingBottom="10px" PaddingLeft="12px" />
+    <HeaderStyle BackColor="#F9F9F9" Height="24px">
+        <Paddings PaddingTop="1px" PaddingBottom="1px" PaddingLeft="12px" />
+        <BackgroundImage Repeat="RepeatX" VerticalPosition="bottom" ImageUrl="~/App_Themes/Default/Dev/Images/rpHeaderBack.gif" />
+        <Border BorderStyle="None" />
+    </HeaderStyle>
+    
+    <%-- Corner parts --%>
+    <TopLeftCorner Height="9px" Width="9px" Url="~/App_Themes/Default/Dev/Images/rpTopLeftCorner.png" />
+    <NoHeaderTopLeftCorner Height="9px" Width="9px" Url="~/App_Themes/Default/Dev/Images/rpNoHeaderTopLeftCorner.png" />
+    <TopRightCorner Height="9px" Width="9px" Url="~/App_Themes/Default/Dev/Images/rpTopRightCorner.png" />
+    <NoHeaderTopRightCorner Height="9px" Width="9px" Url="~/App_Themes/Default/Dev/Images/rpNoHeaderTopRightCorner.png" />
+    <BottomLeftCorner Height="9px" Width="9px" Url="~/App_Themes/Default/Dev/Images/rpBottomLeftCorner.png" />
+    <BottomRightCorner Height="9px" Width="9px" Url="~/App_Themes/Default/Dev/Images/rpBottomRightCorner.png" />
+    
+    <%-- Header parts --%>
+    <HeaderLeftEdge>
+        <BackgroundImage Repeat="NoRepeat" VerticalPosition="bottom" ImageUrl="~/App_Themes/Default/Dev/Images/rpHeaderLeftEdge.gif" />
+    </HeaderLeftEdge>
+    <HeaderContent>
+        <BackgroundImage Repeat="RepeatX" VerticalPosition="bottom" ImageUrl="~/App_Themes/Default/Dev/Images/rpHeaderBack.gif" />
+    </HeaderContent>
+    <HeaderRightEdge>
+        <BackgroundImage Repeat="NoRepeat" VerticalPosition="bottom" ImageUrl="~/App_Themes/Default/Dev/Images/rpHeaderRightEdge.gif" />
+    </HeaderRightEdge>
+    
+    <%-- Middle parts --%>
+    <Content BackColor="White" />
+    <RightEdge BackColor="White">
+        <BackgroundImage Repeat="RepeatY" HorizontalPosition="right" ImageUrl="~/App_Themes/Default/Dev/Images/rpRightEdge.gif" />
+    </RightEdge>
+    <TopEdge BackColor="White">
+        <BackgroundImage ImageUrl="~/App_Themes/Default/Dev/Images/rpTopEdge.gif" />
+    </TopEdge>
+    <NoHeaderTopEdge BackColor="White">
+        <BackgroundImage ImageUrl="~/App_Themes/Default/Dev/Images/rpNoHeaderTopEdge.gif" />
+    </NoHeaderTopEdge>
+    <LeftEdge BackColor="White">
+        <BackgroundImage Repeat="RepeatY" HorizontalPosition="left" ImageUrl="~/App_Themes/Default/Dev/Images/rpLeftEdge.gif" />
+    </LeftEdge>
+    <BottomEdge BackColor="White">
+        <BackgroundImage Repeat="RepeatX" VerticalPosition="bottom" ImageUrl="~/App_Themes/Default/Dev/Images/rpBottomEdge.gif" />
+    </BottomEdge>
+</dev:ASPxRoundPanel>
+
+<dev:ASPxSpinEdit
+	runat="server"
+	CssPostfix="Soft_Orange"
+	ImageFolder="~/App_Themes/Default/Dev/Images/"
+	CssFilePath="~/App_Themes/Default/Dev/styles.css"
+	Height="20px">
+	<SpinButtons HorizontalSpacing="1" />
+</dev:ASPxSpinEdit>
+
+<dev:ASPxTabControl
+	runat="server"
+	CssPostfix="Soft_Orange"
+	CssFilePath="~/App_Themes/Default/Dev/styles.css"
+	TabSpacing="2px">
+	<Paddings Padding="4px" />
+</dev:ASPxTabControl>
+
+<dev:ASPxTextBox
+	runat="server"
+	CssPostfix="Soft_Orange"
+	CssFilePath="~/App_Themes/Default/Dev/styles.css">
+	<ValidationSettings>
+		<ErrorFrameStyle ImageSpacing="4px">
+			<ErrorTextPaddings PaddingLeft="4px" />
+		</ErrorFrameStyle>
+		<ErrorImage Url="~/App_Themes/Default/Dev/Images/edtError.png" Height="14px" Width="14px" />
+	</ValidationSettings>
+</dev:ASPxTextBox>

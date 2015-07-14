@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A41F4B82-88D7-464C-8B08-F9F8FD3FC2BF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Canon.Data</RootNamespace>
+    <AssemblyName>Canon.Data</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdPartyLibs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\CanonCategory.cs" />
+    <Compile Include="Business\CanonChannel.cs" />
+    <Compile Include="Business\CanonChannelMonitor.cs" />
+    <Compile Include="Business\CanonDistributor.cs" />
+    <Compile Include="Business\CanonImportDistributor.cs" />
+    <Compile Include="Business\CanonImportDistributorRecord.cs" />
+    <Compile Include="Business\CanonImportPriceList.cs" />
+    <Compile Include="Business\CanonImportPriceListRecord.cs" />
+    <Compile Include="Business\CanonImportReseller.cs" />
+    <Compile Include="Business\CanonImportResellerRecord.cs" />
+    <Compile Include="Business\CanonMainMonitor.cs" />
+    <Compile Include="Business\CanonManualImport.cs" />
+    <Compile Include="Business\CanonMapping.cs" />
+    <Compile Include="Business\CanonProduct.cs" />
+    <Compile Include="Business\CanonProductGroup.cs" />
+    <Compile Include="Business\CanonProductsLog.cs" />
+    <Compile Include="Business\CanonResellerGroup.cs" />
+    <Compile Include="Canon.cs">
+      <DependentUpon>Canon.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Canon.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Canon.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Cdb.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="Enums\ChannelErrorEnum.cs" />
+    <Compile Include="Enums\ChannelLogEnum.cs" />
+    <Compile Include="Enums\ChannelTypeEnum.cs" />
+    <Compile Include="Enums\ManualImportStatusEnum.cs" />
+    <Compile Include="Enums\MappingLogEnum.cs" />
+    <Compile Include="Enums\ProductsLogEnum.cs" />
+    <Compile Include="Enums\ProductStateEnum.cs" />
+    <Compile Include="Enums\RecommendedChangeSourceEnum.cs" />
+    <Compile Include="Enums\UserRightsEnum.cs" />
+    <Compile Include="Exceptions\ImportAssignedException.cs" />
+    <Compile Include="Exceptions\ProductAssignedException.cs" />
+    <Compile Include="Exceptions\ResellerAssignedException.cs" />
+    <Compile Include="Import\CanonChannelImportXml.cs" />
+    <Compile Include="Import\CanonChannelMapping.cs" />
+    <Compile Include="Import\CanonDistributorImport.cs" />
+    <Compile Include="Import\CanonPriceImport.cs" />
+    <Compile Include="Import\CanonProductImport.cs" />
+    <Compile Include="Import\CanonResellersImport.cs" />
+    <Compile Include="Import\CommonParser.cs" />
+    <Compile Include="Import\ImportErrorMessage.cs" />
+    <Compile Include="Import\ImportFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Canon.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Canon.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Memos.Framework\Memos.Framework.csproj">
+      <Project>{2DFAC4FA-2DE4-46B4-AB18-9E42DF464CE2}</Project>
+      <Name>Memos.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Memos.Import\Memos.Import.csproj">
+      <Project>{5A5F254E-AF50-4F94-A51A-3A9C17B2B692}</Project>
+      <Name>Memos.Import</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Canon.dbml.layout">
+      <DependentUpon>Canon.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="CanonWebApp.Main" %>
+
+<%@ Register TagPrefix="Canon" TagName="MasterHeader" Src="~/Controls/MasterHeader.ascx" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head" runat="server">
+    <title>Canon Monitoring</title>
+</head>
+
+<body>
+    <form id="MainForm" runat="server">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td>
+					<Canon:MasterHeader runat="server" ID="MasterHeaderControl" />
+				</td>
+			</tr>
+			<tr>
+				<td align="left" style="padding: 20px;">
+					<asp:ContentPlaceHolder ID="Content" runat="server"></asp:ContentPlaceHolder>
+				</td>
+			</tr>
+		</table>
+		<asp:Literal runat="server" ID="ltrJS" EnableViewState="false"></asp:Literal>
+    </form>
+</body>
+</html>

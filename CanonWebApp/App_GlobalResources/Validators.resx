@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CantParseNumber" xml:space="preserve">
+    <value>Number ({0}) can't be parsed</value>
+  </data>
+  <data name="CategoryCodeAlreadyExist" xml:space="preserve">
+    <value>Category code is already exist</value>
+  </data>
+  <data name="CategoryIdMustBeSet" xml:space="preserve">
+    <value>Category identificator must be set</value>
+  </data>
+  <data name="CategoryNameAlreadyExist" xml:space="preserve">
+    <value>Category name is already exist</value>
+  </data>
+  <data name="CategoryNameMustBeSet" xml:space="preserve">
+    <value>Category name must be set</value>
+  </data>
+  <data name="ChannelEmailsAreNotValid" xml:space="preserve">
+    <value>One of emails in ReportingTo is not valid email</value>
+  </data>
+  <data name="ChannelInfoTypeMustBeSet" xml:space="preserve">
+    <value>Info type must be selected</value>
+  </data>
+  <data name="ChannelNameMustBeSet" xml:space="preserve">
+    <value>Channel name must be defined</value>
+  </data>
+  <data name="ChannelTypeMustBeSet" xml:space="preserve">
+    <value>Channel type must be selected</value>
+  </data>
+  <data name="ChannelUrlMustBeSet" xml:space="preserve">
+    <value>URL must be defined</value>
+  </data>
+  <data name="EmailFormatValidator" xml:space="preserve">
+    <value>Email format is invalid</value>
+  </data>
+  <data name="EmailRequiredValidator" xml:space="preserve">
+    <value>Email is a required field</value>
+  </data>
+  <data name="EmptySelectionError" xml:space="preserve">
+    <value>No rows are selected. Please select...</value>
+  </data>
+  <data name="FileImportedSuccessfully" xml:space="preserve">
+    <value>File was imported successfully</value>
+  </data>
+  <data name="GeneralFileImportError" xml:space="preserve">
+    <value>An error occured during file import</value>
+  </data>
+  <data name="GeneralRecordImportError" xml:space="preserve">
+    <value>An error occured during record import (product {0})</value>
+  </data>
+  <data name="MaxFileSizeErrorText" xml:space="preserve">
+    <value>Uploaded file is too big</value>
+  </data>
+  <data name="NoPriceForProductError" xml:space="preserve">
+    <value>There is no price defined for product {0} ({1})</value>
+  </data>
+  <data name="NotAllowedContentTypeError" xml:space="preserve">
+    <value>Document type is not allowed for uploading</value>
+  </data>
+  <data name="PasswordRequiredValidator" xml:space="preserve">
+    <value>Password is a required field</value>
+  </data>
+  <data name="ProductsExistDuringCategoryDelete" xml:space="preserve">
+    <value>Can't delete category. There are assigned products for category</value>
+  </data>
+  <data name="UserEmailMustBeInCorrectFormat" xml:space="preserve">
+    <value>Email must be in correct format</value>
+  </data>
+  <data name="UserEmailMustBeSet" xml:space="preserve">
+    <value>Email must be set</value>
+  </data>
+  <data name="UserFullNameMustBeSet" xml:space="preserve">
+    <value>Full name must be set</value>
+  </data>
+  <data name="UserNameAndEmailMustBeUnique" xml:space="preserve">
+    <value>There is already a user in the DB with the same username or email</value>
+  </data>
+  <data name="UserNameMustBeSet" xml:space="preserve">
+    <value>Username must be set</value>
+  </data>
+  <data name="UserNameRequiredValidator" xml:space="preserve">
+    <value>User name is a required field</value>
+  </data>
+  <data name="UserPasswordMustBeSet" xml:space="preserve">
+    <value>Password must be set</value>
+  </data>
+  <data name="XmlChannelDownloadError" xml:space="preserve">
+    <value>Xml file for channel {0} can't be downloaded</value>
+  </data>
+  <data name="XmlChannelEmptyError" xml:space="preserve">
+    <value>Xml channel is empty (no valid products found)</value>
+  </data>
+  <data name="XmlChannelParseError" xml:space="preserve">
+    <value>Xml file for channel {0} can't be parsed</value>
+  </data>
+</root>

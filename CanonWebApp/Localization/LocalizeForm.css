@@ -1,0 +1,85 @@
+﻿.blackborder { border: solid 3px #d3d3d3; background: #ffffff; width: 820px; text-align: left; }
+
+#paneltranslate input { font-size: 11px; }
+#paneltranslate textarea { font-size: 11px; }
+
+.toolbarbar { background: #ffffff; padding-bottom: 5px; margin-top: 5px; }
+
+#toolbar a { text-decoration: none; color: #bc3f26; }
+#toolbar a:hover { text-decoration: none; color: #f15e34; }
+
+.hoverbutton { text-decoration: none; color: #bc3f26; padding: 4px; border: solid 1px #a2a2a2; background: url(images/menuhighlight.png); }
+.hoverbutton a { text-decoration: none; color: #bc3f26; }
+.hoverbutton:hover { text-decoration: none; color: #f15e34; }
+
+.dialogcontent { padding: 15px; }
+
+body, table, td, th, input, textarea, select
+{
+    font-family: Verdana;
+    font-size: 11px;
+}
+
+body
+{
+    margin-top: 0px;
+    padding-top: 0px;
+    color: #5c5c5c;
+}
+
+input, textarea, select
+{
+    font-size: 10px;
+    color: #000000;
+}
+
+a { text-decoration: none; color: #bc3f26; }
+a:hover { text-decoration: none; color: #f15e34; }
+
+.gridheader, .gridheaderbig, .gridheaderleft, .gridheaderright
+{
+	height: 16px;
+	padding: 5px 10px;
+	background: url(images/vertgradient.png) repeat-x bottom;
+	color: #5c5c5c;
+	text-align: left;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+}
+.gridheaderleft
+{
+	text-align: left;
+}
+.gridheaderright
+{
+	text-align: right;
+}
+.gridheaderbig
+{
+	background: #003399 url(images/vertgradient40.png) repeat-x bottom;
+}
+.gridnormal
+{
+	background-color: #eeeeee;
+}
+.gridalternate
+{
+	background-color: #f9f9f9;
+	padding: 5px;
+	border: solid 1px #d3d3d3;
+}
+.errordisplay
+{
+    background-color: #f9f9f9;
+	font-size: 11px;
+	font-weight: normal;
+	color: Red;
+	border: solid 1px #d3d3d3;
+	padding: 10px;
+	line-height: 15pt;
+}
+.errordisplay hr
+{
+	
+}

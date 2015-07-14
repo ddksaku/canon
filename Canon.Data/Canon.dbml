@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="CanonConsolidatedReports" Class="CanonDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=dev3\;Initial Catalog=CanonConsolidatedReports;Persist Security Info=True;User ID=sa" SettingsObjectName="Canon.Data.Properties.Settings" SettingsPropertyName="CanonConsolidatedReportsConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Categories" Member="Categories">
+    <Type Name="Category">
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InternalId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Category_UsersCategory" Member="UsersCategories" ThisKey="CategoryId" OtherKey="CategoryId" Type="UsersCategory" />
+      <Association Name="Category_Product" Member="Products" ThisKey="CategoryId" OtherKey="CategoryId" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UsersCategories" Member="UsersCategories">
+    <Type Name="UsersCategory">
+      <Column Name="RelationId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Category_UsersCategory" Member="Category" ThisKey="CategoryId" OtherKey="CategoryId" Type="Category" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="User_UsersCategory" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Enums" Member="Enums">
+    <Type Name="Enum">
+      <Column Name="EnumId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EnumType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NameCz" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NameEn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Enum_UsersRight" Member="UsersRights" ThisKey="EnumId" OtherKey="Rights" Type="UsersRight" />
+      <Association Name="Enum_ImportLog" Member="ImportLogs" ThisKey="EnumId" OtherKey="LogType" Type="ImportLog" />
+      <Association Name="Enum_ImportLogError" Member="ImportLogErrors" ThisKey="EnumId" OtherKey="ErrorType" Type="ImportLogError" />
+      <Association Name="Enum_ProductsLog" Member="ProductsLogs" ThisKey="EnumId" OtherKey="LogType" Type="ProductsLog" />
+      <Association Name="Enum_RecommendedLog" Member="RecommendedLogs" ThisKey="EnumId" OtherKey="LogType" Type="RecommendedLog" />
+      <Association Name="Enum_ManualImportQueue" Member="ManualImportQueues" ThisKey="EnumId" OtherKey="Status" Type="ManualImportQueue" />
+      <Association Name="Enum_Channel" Member="Channels" ThisKey="EnumId" OtherKey="ChannelType" Type="Channel" />
+      <Association Name="Enum_Channel1" Member="Channels1" ThisKey="EnumId" OtherKey="InfoType" Type="Channel" />
+      <Association Name="EnumType_Enum" Member="EnumType1" ThisKey="EnumType" OtherKey="EnumTypeId" Type="EnumType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EnumTypes" Member="EnumTypes">
+    <Type Name="EnumType">
+      <Column Name="EnumTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EnumTypeName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="EnumType_Enum" Member="Enums" ThisKey="EnumTypeId" OtherKey="EnumType" Type="Enum" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Localizations" Member="Localizations">
+    <Type Name="Localization">
+      <Column Name="pk" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ResourceId" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LocaleId" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="ResourceSet" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="BinFile" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TextFile" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Filename" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductsRelevance" Member="ProductsRelevances">
+    <Type Name="ProductsRelevance">
+      <Column Name="RelevanceId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Word" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Points" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Max" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Product_ProductsRelevance" Member="Product" ThisKey="ProductId" OtherKey="ProductId" Type="Product" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RecommendedPrices" Member="RecommendedPrices">
+    <Type Name="RecommendedPrice">
+      <Column Name="PriceId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChangeDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Association Name="User_RecommendedPrice" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
+      <Association Name="Product_RecommendedPrice" Member="Product" ThisKey="ProductId" OtherKey="ProductId" Type="Product" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UsersRights" Member="UsersRights">
+    <Type Name="UsersRight">
+      <Column Name="RecordId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Rights" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Enum_UsersRight" Member="Enum" ThisKey="Rights" OtherKey="EnumId" Type="Enum" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="User_UsersRight" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MappingRules" Member="MappingRules">
+    <Type Name="MappingRule">
+      <Column Name="MapId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChannelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MonitoredName" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="MonitoredUrl" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
+      <Association Name="Channel_MappingRule" Member="Channel" ThisKey="ChannelId" OtherKey="ChannelId" Type="Channel" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Product_MappingRule" Member="Product" ThisKey="ProductId" OtherKey="ProductId" Type="Product" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CurrentRelevance" Member="CurrentRelevances">
+    <Type Name="CurrentRelevance">
+      <Column Name="RelId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChannelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChannelMonitorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RelevancePercent" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="BestForMapping" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="ProductUrl" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Association Name="ChannelMonitor_CurrentRelevance" Member="ChannelMonitor" ThisKey="ChannelMonitorId" OtherKey="RecordId" Type="ChannelMonitor" IsForeignKey="true" DeleteRule="SET NULL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Excluded" Member="Excludeds">
+    <Type Name="Excluded">
+      <Column Name="ExcId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChannelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Channel_Excluded" Member="Channel" ThisKey="ChannelId" OtherKey="ChannelId" Type="Channel" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Product_Excluded" Member="Product" ThisKey="ProductId" OtherKey="ProductId" Type="Product" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ImportLog" Member="ImportLogs">
+    <Type Name="ImportLog">
+      <Column Name="LogId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ChannelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LogDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Tryed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Success" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LogType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ImportLog_ImportLogError" Member="ImportLogErrors" ThisKey="LogId" OtherKey="MainLogId" Type="ImportLogError" />
+      <Association Name="Enum_ImportLog" Member="Enum" ThisKey="LogType" OtherKey="EnumId" Type="Enum" IsForeignKey="true" />
+      <Association Name="Channel_ImportLog" Member="Channel" ThisKey="ChannelId" OtherKey="ChannelId" Type="Channel" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ImportLogErrors" Member="ImportLogErrors">
+    <Type Name="ImportLogError">
+      <Column Name="ErrorId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MainLogId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ErrorType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Association Name="Enum_ImportLogError" Member="Enum" ThisKey="ErrorType" OtherKey="EnumId" Type="Enum" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="ImportLog_ImportLogError" Member="ImportLog" ThisKey="MainLogId" OtherKey="LogId" Type="ImportLog" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductsLog" Member="ProductsLogs">
+    <Type Name="ProductsLog">
+      <Column Name="RecordId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChannelId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LogDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LogType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LogParameter" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Enum_ProductsLog" Member="Enum" ThisKey="LogType" OtherKey="EnumId" Type="Enum" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Channel_ProductsLog" Member="Channel" ThisKey="ChannelId" OtherKey="ChannelId" Type="Channel" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="User_ProductsLog" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
+      <Association Name="Product_ProductsLog" Member="Product" ThisKey="ProductId" OtherKey="ProductId" Type="Product" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RecommendedLog" Member="RecommendedLogs">
+    <Type Name="RecommendedLog">
+      <Column Name="LogId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LogDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RecomDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LogType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Association Name="Enum_RecommendedLog" Member="Enum" ThisKey="LogType" OtherKey="EnumId" Type="Enum" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="User_RecommendedLog" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Product_RecommendedLog" Member="Product" ThisKey="ProductId" OtherKey="ProductId" Type="Product" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ManualImportQueue" Member="ManualImportQueues">
+    <Type Name="ManualImportQueue">
+      <Column Name="RecordId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ChannelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PostDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ManualImportQueue_ManualImportSubscriber" Member="ManualImportSubscribers" ThisKey="RecordId" OtherKey="ManualImportId" Type="ManualImportSubscriber" />
+      <Association Name="Enum_ManualImportQueue" Member="Enum" ThisKey="Status" OtherKey="EnumId" Type="Enum" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Channel_ManualImportQueue" Member="Channel" ThisKey="ChannelId" OtherKey="ChannelId" Type="Channel" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="User_ManualImportQueue" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ManualImportSubscribers" Member="ManualImportSubscribers">
+    <Type Name="ManualImportSubscriber">
+      <Column Name="RecordId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ManualImportId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubscriptDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="ManualImportQueue_ManualImportSubscriber" Member="ManualImportQueue" ThisKey="ManualImportId" OtherKey="RecordId" Type="ManualImportQueue" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MainMonitor" Member="MainMonitors">
+    <Type Name="MainMonitor">
+      <Column Name="RecordId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChannelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChannelMonitorId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CalcDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RecommendedPrice" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ChannelPrice" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Difference" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Association Name="ChannelMonitor_MainMonitor" Member="ChannelMonitor" ThisKey="ChannelMonitorId" OtherKey="RecordId" Type="ChannelMonitor" IsForeignKey="true" DeleteRule="SET NULL" />
+      <Association Name="Product_MainMonitor" Member="Product" ThisKey="ProductId" OtherKey="ProductId" Type="Product" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FeedProductExceptions" Member="FeedProductExceptions">
+    <Type Name="FeedProductException">
+      <Column Name="ExceptionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StopWord" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChannelMonitor" Member="ChannelMonitors">
+    <Type Name="ChannelMonitor">
+      <Column Name="RecordId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ChannelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImportDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductDesc" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductUrl" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PriceVat" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Vat" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Association Name="ChannelMonitor_CurrentRelevance" Member="CurrentRelevances" ThisKey="RecordId" OtherKey="ChannelMonitorId" Type="CurrentRelevance" />
+      <Association Name="ChannelMonitor_MainMonitor" Member="MainMonitors" ThisKey="RecordId" OtherKey="ChannelMonitorId" Type="MainMonitor" />
+      <Association Name="Channel_ChannelMonitor" Member="Channel" ThisKey="ChannelId" OtherKey="ChannelId" Type="Channel" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Product_ChannelMonitor" Member="Product" ThisKey="ProductId" OtherKey="ProductId" Type="Product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Channels" Member="Channels">
+    <Type Name="Channel">
+      <Column Name="ChannelId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ChannelName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ChannelType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="InfoType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AdditionalCommand" Type="System.String" DbType="NChar(500)" CanBeNull="true" />
+      <Column Name="ReportingTo" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="Channel_MappingRule" Member="MappingRules" ThisKey="ChannelId" OtherKey="ChannelId" Type="MappingRule" />
+      <Association Name="Channel_Excluded" Member="Excludeds" ThisKey="ChannelId" OtherKey="ChannelId" Type="Excluded" />
+      <Association Name="Channel_ImportLog" Member="ImportLogs" ThisKey="ChannelId" OtherKey="ChannelId" Type="ImportLog" />
+      <Association Name="Channel_ProductsLog" Member="ProductsLogs" ThisKey="ChannelId" OtherKey="ChannelId" Type="ProductsLog" />
+      <Association Name="Channel_ManualImportQueue" Member="ManualImportQueues" ThisKey="ChannelId" OtherKey="ChannelId" Type="ManualImportQueue" />
+      <Association Name="Channel_ChannelMonitor" Member="ChannelMonitors" ThisKey="ChannelId" OtherKey="ChannelId" Type="ChannelMonitor" />
+      <Association Name="Enum_Channel" Member="Enum" ThisKey="ChannelType" OtherKey="EnumId" Type="Enum" IsForeignKey="true" />
+      <Association Name="Enum_Channel1" Member="Enum1" ThisKey="InfoType" OtherKey="EnumId" Type="Enum" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DistributorType" Member="DistributorTypes">
+    <Type Name="DistributorType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FileAs" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="DistributorType_Distributor" Member="Distributors" ThisKey="ID" OtherKey="IDDistributorType" Type="Distributor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ImportDistributor" Member="ImportDistributors">
+    <Type Name="ImportDistributor">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDDistributor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateImported" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="DateFrom" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DateTo" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Succeeded" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ErrorMessage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="ImportDistributor_ImportDistributorRecord" Member="ImportDistributorRecords" ThisKey="ID" OtherKey="IDImportDistributor" Type="ImportDistributorRecord" />
+      <Association Name="Distributor_ImportDistributor" Member="Distributor" ThisKey="IDDistributor" OtherKey="ID" Type="Distributor" IsForeignKey="true" />
+      <Association Name="User_ImportDistributor" Member="User" ThisKey="IDUser" OtherKey="UserId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ImportDistributorRecord" Member="ImportDistributorRecords">
+    <Type Name="ImportDistributorRecord">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDImportDistributor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ResellerIdentificationNumber" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ResellerName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ProductCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UnitPrice" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Association Name="ImportDistributor_ImportDistributorRecord" Member="ImportDistributor" ThisKey="IDImportDistributor" OtherKey="ID" Type="ImportDistributor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ImportPriceList" Member="ImportPriceLists">
+    <Type Name="ImportPriceList">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="DateImported" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Succeeded" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ErrorMessage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="ImportPriceList_ImportPriceListRecord" Member="ImportPriceListRecords" ThisKey="ID" OtherKey="IDImportPriceList" Type="ImportPriceListRecord" />
+      <Association Name="User_ImportPriceList" Member="User" ThisKey="IDUser" OtherKey="UserId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ResellerGroup" Member="ResellerGroups">
+    <Type Name="ResellerGroup">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FileAs" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ResellerGroup_Reseller" Member="Resellers" ThisKey="ID" OtherKey="IDResellerGroup" Type="Reseller" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reseller" Member="Resellers">
+    <Type Name="Reseller">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDResellerGroup" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDCountry" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FileAs" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="IdentificationNumber" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ResellerGroup_Reseller" Member="ResellerGroup" ThisKey="IDResellerGroup" OtherKey="ID" Type="ResellerGroup" IsForeignKey="true" />
+      <Association Name="Country_Reseller" Member="Country" ThisKey="IDCountry" OtherKey="ID" Type="Country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Country" Member="Countries">
+    <Type Name="Country">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FileAs" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Country_Reseller" Member="Resellers" ThisKey="ID" OtherKey="IDCountry" Type="Reseller" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ImportReseller" Member="ImportResellers">
+    <Type Name="ImportReseller">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="DateImported" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Succeeded" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ErrorMessage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="ImportReseller_ImportResellerRecord" Member="ImportResellerRecords" ThisKey="ID" OtherKey="IDImportReseller" Type="ImportResellerRecord" />
+      <Association Name="User_ImportReseller" Member="User" ThisKey="IDUser" OtherKey="UserId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductGroup" Member="ProductGroups">
+    <Type Name="ProductGroup">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FileAs" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="ProductGroup_Product" Member="Products" ThisKey="ID" OtherKey="IDProductGroup" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Distributor" Member="Distributors">
+    <Type Name="Distributor">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDDistributorType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FileAs" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ShowInImports" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ShowInReports" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Distributor_ImportDistributor" Member="ImportDistributors" ThisKey="ID" OtherKey="IDDistributor" Type="ImportDistributor" />
+      <Association Name="DistributorType_Distributor" Member="DistributorType" ThisKey="IDDistributorType" OtherKey="ID" Type="DistributorType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDailyEmail" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastLogin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsForbidden" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="User_UsersCategory" Member="UsersCategories" ThisKey="UserId" OtherKey="UserId" Type="UsersCategory" />
+      <Association Name="User_RecommendedPrice" Member="RecommendedPrices" ThisKey="UserId" OtherKey="UserId" Type="RecommendedPrice" />
+      <Association Name="User_UsersRight" Member="UsersRights" ThisKey="UserId" OtherKey="UserId" Type="UsersRight" />
+      <Association Name="User_ProductsLog" Member="ProductsLogs" ThisKey="UserId" OtherKey="UserId" Type="ProductsLog" />
+      <Association Name="User_RecommendedLog" Member="RecommendedLogs" ThisKey="UserId" OtherKey="UserId" Type="RecommendedLog" />
+      <Association Name="User_ManualImportQueue" Member="ManualImportQueues" ThisKey="UserId" OtherKey="UserId" Type="ManualImportQueue" />
+      <Association Name="User_ImportDistributor" Member="ImportDistributors" ThisKey="UserId" OtherKey="IDUser" Type="ImportDistributor" />
+      <Association Name="User_ImportPriceList" Member="ImportPriceLists" ThisKey="UserId" OtherKey="IDUser" Type="ImportPriceList" />
+      <Association Name="User_ImportReseller" Member="ImportResellers" ThisKey="UserId" OtherKey="IDUser" Type="ImportReseller" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ImportResellerRecord" Member="ImportResellerRecords">
+    <Type Name="ImportResellerRecord">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDImportReseller" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FileAs" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="IdentificationNumber" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ResellerGroupCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CountryCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="ImportReseller_ImportResellerRecord" Member="ImportReseller" ThisKey="IDImportReseller" OtherKey="ID" Type="ImportReseller" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductType" Member="ProductTypes">
+    <Type Name="ProductType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="ProductType_Product" Member="Products" ThisKey="ID" OtherKey="IDProductType" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Products" Member="Products">
+    <Type Name="Product">
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDProductGroup" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CurrentPrice" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IDProductType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Product_ProductsRelevance" Member="ProductsRelevances" ThisKey="ProductId" OtherKey="ProductId" Type="ProductsRelevance" />
+      <Association Name="Product_RecommendedPrice" Member="RecommendedPrices" ThisKey="ProductId" OtherKey="ProductId" Type="RecommendedPrice" />
+      <Association Name="Product_MappingRule" Member="MappingRules" ThisKey="ProductId" OtherKey="ProductId" Type="MappingRule" />
+      <Association Name="Product_Excluded" Member="Excludeds" ThisKey="ProductId" OtherKey="ProductId" Type="Excluded" />
+      <Association Name="Product_ProductsLog" Member="ProductsLogs" ThisKey="ProductId" OtherKey="ProductId" Type="ProductsLog" />
+      <Association Name="Product_RecommendedLog" Member="RecommendedLogs" ThisKey="ProductId" OtherKey="ProductId" Type="RecommendedLog" />
+      <Association Name="Product_MainMonitor" Member="MainMonitors" ThisKey="ProductId" OtherKey="ProductId" Type="MainMonitor" />
+      <Association Name="Product_ChannelMonitor" Member="ChannelMonitors" ThisKey="ProductId" OtherKey="ProductId" Type="ChannelMonitor" />
+      <Association Name="Category_Product" Member="Category" ThisKey="CategoryId" OtherKey="CategoryId" Type="Category" IsForeignKey="true" DeleteRule="SET NULL" />
+      <Association Name="ProductGroup_Product" Member="ProductGroup" ThisKey="IDProductGroup" OtherKey="ID" Type="ProductGroup" IsForeignKey="true" />
+      <Association Name="ProductType_Product" Member="ProductType" ThisKey="IDProductType" OtherKey="ID" Type="ProductType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ImportPriceListRecord" Member="ImportPriceListRecords">
+    <Type Name="ImportPriceListRecord">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDImportPriceList" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductCategory" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ListPrice" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductType" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="ImportPriceList_ImportPriceListRecord" Member="ImportPriceList" ThisKey="IDImportPriceList" OtherKey="ID" Type="ImportPriceList" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.CleanTodaysChannelMonitor" Method="CleanTodaysChannelMonitor">
+    <Parameter Name="channel" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.RecreateCurrentRelevanceForChannel" Method="RecreateCurrentRelevanceForChannel">
+    <Parameter Name="channel" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetBestRelevanceForMapping" Method="GetBestRelevanceForMapping">
+    <Parameter Name="channel" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetBestRelevanceForMappingResult">
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChannelMonitorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RelevancePercent" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CreateNewMappingRulesForAll" Method="CreateNewMappingRulesForAll">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateMonitorValues" Method="UpdateMonitorValues">
+    <Parameter Name="channelId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetLastActualizationByChannel" Method="GetLastActualizationByChannel">
+    <Parameter Name="channel" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetLastActualizationByChannelResult">
+      <Column Name="ImportDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetProductImportLog" Method="GetProductImportLog">
+    <ElementType Name="GetProductImportLogResult">
+      <Column Name="LogDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetMainLogByDate" Method="GetMainLogByDate">
+    <Parameter Name="date" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="type" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetMainLogByDateResult">
+      <Column Name="LogId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChannelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChannelName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NameEn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NameCz" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChannelTypeEn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChannelTypeCz" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tryed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Success" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LogType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetMappingByChannel" Method="GetMappingByChannel">
+    <Parameter Name="channelId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetMappingByChannelResult">
+      <Column Name="ProductState" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductEan" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Actual" Type="System.String" DbType="NVarChar(1054)" CanBeNull="true" />
+      <Column Name="Recommended" Type="System.String" DbType="NVarChar(1054)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetProductState" Method="GetProductState" IsComposable="true">
+    <Parameter Name="channelId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="productId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetManualMappingProducts" Method="GetManualMappingProducts">
+    <Parameter Name="channelId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="productId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.MaintainDatabase" Method="MaintainDatabase">
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

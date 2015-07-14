@@ -1,0 +1,12 @@
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Canon.Data\bin\Debug\Canon.Data.dll.config
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Canon.Data\bin\Debug\Canon.Data.dll
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Canon.Data\bin\Debug\Canon.Data.pdb
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Canon.Data\bin\Debug\log4net.dll
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Canon.Data\bin\Debug\Memos.Framework.dll
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Canon.Data\bin\Debug\Memos.Import.dll
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Canon.Data\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Canon.Data\bin\Debug\Memos.Framework.pdb
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Canon.Data\bin\Debug\Memos.Import.pdb
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Canon.Data\obj\Debug\ResolveAssemblyReference.cache
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Canon.Data\obj\Debug\Canon.Data.dll
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Canon.Data\obj\Debug\Canon.Data.pdb

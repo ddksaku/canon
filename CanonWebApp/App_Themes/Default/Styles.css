@@ -1,0 +1,157 @@
+body
+{
+	margin: 0px;
+	padding:  0px;
+	text-align: left;
+	font-family: Verdana;
+	font-size: 11px;
+}
+
+h3
+{
+    margin: 0px;
+    font-family: Verdana;
+	font-size: 12px;
+}
+
+h4
+{
+    margin: 10px 0px 2px 0px;
+    font-family: Verdana;
+	font-size: 11px;
+}
+
+a, a:visited
+{
+    color: #bc3f26;
+    cursor: pointer;
+    font-family: Verdana;
+    font-size: 11px;
+	text-decoration: none;
+}
+
+a:hover, a:active
+{
+    color: #f15e34;
+    cursor: pointer;
+    font-family: Verdana;
+    font-size: 11px;
+	text-decoration: none;
+}
+
+
+
+.content-header
+{
+    background: url('images/header-background.png') no-repeat 0px 0px;
+    height: 65px;
+    width: 715px;
+    padding-left:40px;
+}
+
+.logo-image
+{
+    margin: 0px 0px 0px 0px;
+}
+
+.content-menu
+{
+    height: 26px;
+    width: 100%;
+}
+
+.menu-grey
+{
+    background: url('images/menu-background-gray.png') repeat-x 0px 0px;
+    height: 24px;
+    border-top: solid 1px #d4d4d4;
+    border-bottom: solid 1px #b5b5b5;
+}
+.menu-orange-selected
+{
+    background: url('images/menu-background-orange.png') repeat-x 0px 0px;
+    height: 24px;
+    border-top: solid 1px #3c3c3c;
+    border-bottom: solid 1px #151515;
+    padding: 0px 20px;
+}
+.menu-orange
+{
+    background: url('images/menu-background-orange-selected.png') repeat-x 0px 0px;
+    height: 24px;
+    border-top: solid 1px #a5a5a5;
+    border-bottom: solid 1px #777777;
+    padding: 0px 20px;
+}
+
+.menu-border
+{
+    background: url('images/menu-border.png') repeat-x 0px 0px;
+    height: 26px;
+    width: 1px;
+}
+
+.menu-border-grey
+{
+    background: url('images/menu-border-grey.png') repeat-x 0px 0px;
+    height: 26px;
+    width: 1px;
+}
+
+.menu-separator
+{
+    background: url('images/menu-separator.png') repeat-x 0px 0px;
+    height: 26px;
+    width: 1px;
+}
+
+.menu-date
+{
+    padding: 6px 20px 0px 0px;
+    height: 26px;
+    font-size: 10px;
+    color: #555555;
+}
+
+a.menu-link, a.menu-link:visited
+{
+    font-family: Verdana;
+	font-size: 11px;
+	font-weight: bold;
+	cursor: pointer;
+	
+	color: #ffffff;
+	color: #000;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+a.menu-link:hover, a.menu-link:active
+{
+    font-family: Verdana;
+	font-size: 11px;
+	font-weight: bold;
+	cursor: pointer;
+	/*color: #dddddd;*/
+	
+	text-decoration: underline;
+	white-space: nowrap;
+}
+.menu-orange-selected a.menu-link
+{
+    color: #fff;
+}
+
+.success-message
+{
+    color: #3366ff;
+    font-family: Verdana;
+    font-size: 11px;
+}
+
+.unsuccess-message
+{
+    color: #ff3300;
+    font-family: Verdana;
+    font-size: 11px;
+}

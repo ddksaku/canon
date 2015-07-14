@@ -1,0 +1,235 @@
+﻿*
+{
+    margin: 0;
+    padding: 0;
+}
+div
+{
+    font-family: Verdana;
+    font-size: 11px;
+}
+.reportPanel
+{
+    min-width: 17px;
+    position: absolute;
+    right: 0;
+    background: #f5f5f5;
+    border: 1px solid #a0a0a0;
+    height: 600px;
+}
+.reportPanel h4
+{
+    font-size: 13px;
+    margin: 8px 5px 4px 5px;
+}
+.reportPanel h5
+{
+    font-size: 11px;
+    margin: 12px 5px 2px 5px;
+}
+.toggle
+{
+    display: block;
+    width: 15px;
+    border-right: 1px solid #a0a0a0;
+    background: #e0e0e0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #e0e0e0 url('Images/arrow01.gif') 50% 50% no-repeat;
+    cursor: pointer;
+}
+.toggle:hover
+{
+    background-color: #d5d5d5;
+}
+.form
+{
+    margin-left: 20px;
+    width: 400px;
+}
+.form select
+{
+    width: 180px;
+    font-family: Verdana;
+    font-size: 11px;
+    margin: 0px 5px 0px 5px;
+}
+.left
+{
+    float: left;
+    width: 190px;
+    margin-left: 4px;
+}
+.right
+{
+    float: right;
+    width: 200px;
+}
+.reportHeader
+{
+    xwidth: 100%;
+    margin-bottom: 20px;
+}
+.reportHeader a
+{
+    display: block;
+    line-height: 20px;
+    text-align: center;
+    border: 1px solid #a0a0a0;
+    background: #ececec;
+    width: 140px;
+}
+.reportHeader th
+{
+    padding: 2px 5px;
+    text-align: right;
+    width: 40px;
+}
+
+
+/* SearchBox */
+.canvas
+{
+    xposition: absolute;
+    height: 180px;
+    overflow: scroll;
+    width: 180px;
+    xmargin-left: -40px;
+    border: 1px solid #a0a0a0;
+    background: #fff;
+}
+.dropdown
+{
+    border: 0;
+    border-collapse: collapse;
+    font-family: Arial;
+    font-size: 10px;
+    width: 160px;
+    margin-top: 0px;
+}
+.dropdown thead th
+{
+    background: #d0d0d0;
+}
+.dropdown thead td
+{
+    background: #e4e4e4;
+}
+.dropdown th, .dropdown td
+{
+    padding: 3px 7px;
+}
+.dropdown tbody td
+{
+    xborder: 1px solid red;
+}
+.dropdown thead
+{
+    border-bottom: 1px solid #a0a0a0;
+    display: none;
+}
+.dropdown tfoot th, .dropdown tfoot td
+{
+    border-top: 3px double #a0a0a0;
+}
+.dropdown tfoot
+{
+    display: none!important;
+}
+.dropdown tfoot th
+{
+    background: #d0d0d0;
+}
+.dropdown tfoot td
+{
+    background: #e4e4e4;
+}
+.chb
+{
+    background: #ececec;
+    width: 30px;
+}
+input.text
+{
+    border: none;
+    background: #ececec;
+    width: 170px;
+    padding: 0;
+    font-family: Verdana;
+    font-size: 11px;
+    line-height: 25px;
+    height: 21px;
+    padding: 0 5px;
+    border: 1px solid #a0a0a0;
+    border-bottom: 0px;
+}
+.dropdown .sel th
+{
+    background: #007adb;
+}
+/* End SearchBox */
+th.rbl 
+{
+    width: 200px;
+}
+.reportPanel .form ul
+{
+    list-style-type: none;
+    position: absolute;
+    top: 150px;
+    left: 240px;
+}
+.reportPanel .form ul li
+{
+    margin-bottom: 5px;
+    height: 26px;
+}
+.reportPanel .form ul a
+{
+    display: block;
+    color: #000;
+    border: 1px solid #808080;
+    font-weight: bold;
+    position: absolute;
+    width: 140px;
+    text-align: center;
+    height: 24px;
+    line-height: 24px;
+    background: url('images/menu-background-orange-selected.png') repeat-x 0px 0px;
+    border-top: solid 1px #a5a5a5;
+    border-bottom: solid 1px #777777;
+}
+.grid h3
+{
+    margin-top: 20px;
+}
+.grid table
+{
+    border-collapse: collapse;
+    border: 1px solid #808080;
+    margin-top: 5px;
+    xwidth: 100%;
+}
+.grid td, .grid th
+{
+    padding: 5px;
+    
+}
+.rbl td
+{
+    padding: 0 10px;
+}
+.rbl td label
+{
+    padding-left: 2px;
+    position: relative;
+    bottom: 2px;
+}
+.reportPanel label
+{
+    padding-left: 5px;
+    position: relative;
+    bottom: 2px;
+}

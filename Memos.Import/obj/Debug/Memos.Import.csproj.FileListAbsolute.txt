@@ -1,0 +1,5 @@
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Memos.Import\bin\Debug\Memos.Import.dll
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Memos.Import\bin\Debug\Memos.Import.pdb
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Memos.Import\obj\Debug\ResolveAssemblyReference.cache
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Memos.Import\obj\Debug\Memos.Import.dll
+F:\Project Development\MM\Mywork\Canon\Source\trunk\Memos.Import\obj\Debug\Memos.Import.pdb

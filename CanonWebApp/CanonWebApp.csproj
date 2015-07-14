@@ -1,0 +1,923 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7BBF2E29-AA07-463D-82FD-F557AD5E50E0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CanonWebApp</RootNamespace>
+    <AssemblyName>CanonWebApp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v8.3.Core, Version=8.3.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v8.3, Version=8.3.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v8.3, Version=8.3.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxEditors.v8.3, Version=8.3.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxGridView.v8.3, Version=8.3.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxGridView.v8.3.Export, Version=8.3.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxScheduler.v8.3, Version=8.3.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.v8.3, Version=8.3.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v8.3, Version=8.3.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v8.3.Web, Version=8.3.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\DevExpress.XtraCharts.v8.3.Web\8.3.3.0__b88d1754d700e49a\DevExpress.XtraCharts.v8.3.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v8.3, Version=8.3.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdPartyLibs\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="Westwind.Globalization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdPartyLibs\Westwind.Globalization.dll</HintPath>
+    </Reference>
+    <Reference Include="Westwind.Tools, Version=2.0.2985.29990, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdPartyLibs\Westwind.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="Westwind.Web.Controls, Version=2.2.2992.25894, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdPartyLibs\Westwind.Web.Controls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="LoginPage.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administration.aspx.cs">
+      <DependentUpon>Administration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration.aspx.designer.cs">
+      <DependentUpon>Administration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Common.cs-CZ.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Common.cs-CZ.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Common.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Common.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Headers.cs-CZ.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Headers.cs-CZ.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Headers.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Headers.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Validators.cs-CZ.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Validators.cs-CZ.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Validators.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Validators.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Language.cs" />
+    <Compile Include="Business\Localization.cs" />
+    <Compile Include="Business\User.cs" />
+    <Compile Include="ChannelMapping.aspx.cs">
+      <DependentUpon>ChannelMapping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChannelMapping.aspx.designer.cs">
+      <DependentUpon>ChannelMapping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Charts.aspx.cs">
+      <DependentUpon>Charts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Charts.aspx.designer.cs">
+      <DependentUpon>Charts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminChangePassword.ascx.cs">
+      <DependentUpon>AdminChangePassword.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminChangePassword.ascx.designer.cs">
+      <DependentUpon>AdminChangePassword.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AjaxTest.ascx.cs">
+      <DependentUpon>AjaxTest.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AjaxTest.ascx.designer.cs">
+      <DependentUpon>AjaxTest.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Code\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Code\CallbackErrorModule.cs" />
+    <Compile Include="Code\CanonMembershipProvider.cs" />
+    <Compile Include="Code\ChannelActualization.cs" />
+    <Compile Include="Code\ConfigSettings.cs" />
+    <Compile Include="Code\Controls\CanonCheckBoxList.cs" />
+    <Compile Include="Code\Controls\CanonComboBox.cs" />
+    <Compile Include="Code\Controls\CanonPanel.cs" />
+    <Compile Include="Code\Exceptions\InvalidOldPasswordException.cs" />
+    <Compile Include="Code\Exceptions\LoginExistsException.cs" />
+    <Compile Include="Code\FileUtils.cs" />
+    <Compile Include="Code\MainMonitorFilter.cs" />
+    <Compile Include="Code\Reporter\PivotTable.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PivotTable.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Code\SessionManager.cs" />
+    <Compile Include="Code\Utilities.cs" />
+    <Compile Include="Code\WebEngine\VictoryPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminCategories.ascx.cs">
+      <DependentUpon>AdminCategories.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminCategories.ascx.designer.cs">
+      <DependentUpon>AdminCategories.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminChannels.ascx.cs">
+      <DependentUpon>AdminChannels.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminChannels.ascx.designer.cs">
+      <DependentUpon>AdminChannels.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminChannelsMapping.ascx.cs">
+      <DependentUpon>AdminChannelsMapping.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminChannelsMapping.ascx.designer.cs">
+      <DependentUpon>AdminChannelsMapping.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminDistributorsImport.ascx.cs">
+      <DependentUpon>AdminDistributorsImport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminDistributorsImport.ascx.designer.cs">
+      <DependentUpon>AdminDistributorsImport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminDistributorsImporter.ascx.cs">
+      <DependentUpon>AdminDistributorsImporter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminDistributorsImporter.ascx.designer.cs">
+      <DependentUpon>AdminDistributorsImporter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminDistributorsManage.ascx.cs">
+      <DependentUpon>AdminDistributorsManage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminDistributorsManage.ascx.designer.cs">
+      <DependentUpon>AdminDistributorsManage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminGroups.ascx.cs">
+      <DependentUpon>AdminGroups.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminGroups.ascx.designer.cs">
+      <DependentUpon>AdminGroups.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminLog.ascx.cs">
+      <DependentUpon>AdminLog.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminLog.ascx.designer.cs">
+      <DependentUpon>AdminLog.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminPricesImport.ascx.cs">
+      <DependentUpon>AdminPricesImport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminPricesImport.ascx.designer.cs">
+      <DependentUpon>AdminPricesImport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminPricesImporter.ascx.cs">
+      <DependentUpon>AdminPricesImporter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminPricesImporter.ascx.designer.cs">
+      <DependentUpon>AdminPricesImporter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminPricesImportsLog.ascx.cs">
+      <DependentUpon>AdminPricesImportsLog.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminPricesImportsLog.ascx.designer.cs">
+      <DependentUpon>AdminPricesImportsLog.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminProductDetails.ascx.cs">
+      <DependentUpon>AdminProductDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminProductDetails.ascx.designer.cs">
+      <DependentUpon>AdminProductDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminProductMapping.ascx.cs">
+      <DependentUpon>AdminProductMapping.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminProductMapping.ascx.designer.cs">
+      <DependentUpon>AdminProductMapping.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminProducts.ascx.cs">
+      <DependentUpon>AdminProducts.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminProducts.ascx.designer.cs">
+      <DependentUpon>AdminProducts.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminProductsImport.ascx.cs">
+      <DependentUpon>AdminProductsImport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminProductsImport.ascx.designer.cs">
+      <DependentUpon>AdminProductsImport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminResellersImport.ascx.cs">
+      <DependentUpon>AdminResellersImport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminResellersImport.ascx.designer.cs">
+      <DependentUpon>AdminResellersImport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminResellersImporter.ascx.cs">
+      <DependentUpon>AdminResellersImporter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminResellersImporter.ascx.designer.cs">
+      <DependentUpon>AdminResellersImporter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminResellersImportsLog.ascx.cs">
+      <DependentUpon>AdminResellersImportsLog.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminResellersImportsLog.ascx.designer.cs">
+      <DependentUpon>AdminResellersImportsLog.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminUsers.ascx.cs">
+      <DependentUpon>AdminUsers.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminUsers.ascx.designer.cs">
+      <DependentUpon>AdminUsers.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CanonCalendar.ascx.cs">
+      <DependentUpon>CanonCalendar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\CanonCalendar.ascx.designer.cs">
+      <DependentUpon>CanonCalendar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CanonPageControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ChartExporter.ascx.cs">
+      <DependentUpon>ChartExporter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ChartExporter.ascx.designer.cs">
+      <DependentUpon>ChartExporter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CommandColumnHeaderTemplate.cs" />
+    <Compile Include="Controls\DXLocalizer.cs" />
+    <Compile Include="Controls\LogPopupControl.ascx.cs">
+      <DependentUpon>LogPopupControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\LogPopupControl.ascx.designer.cs">
+      <DependentUpon>LogPopupControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MasterHeader.ascx.cs">
+      <DependentUpon>MasterHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\MasterHeader.ascx.designer.cs">
+      <DependentUpon>MasterHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProductPrices.ascx.cs">
+      <DependentUpon>ProductPrices.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ProductPrices.ascx.designer.cs">
+      <DependentUpon>ProductPrices.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchBox.ascx.cs">
+      <DependentUpon>SearchBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchBox.ascx.designer.cs">
+      <DependentUpon>SearchBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UntranslatedText.ascx.cs">
+      <DependentUpon>UntranslatedText.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\UntranslatedText.ascx.designer.cs">
+      <DependentUpon>UntranslatedText.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\ChannelStateEnum.cs" />
+    <Compile Include="Enums\Languages.cs" />
+    <Compile Include="Enums\LogTypesEnum.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Localization\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Localization\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pom.aspx.cs">
+      <DependentUpon>Pom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pom.aspx.designer.cs">
+      <DependentUpon>Pom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDetails.aspx.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductDetails.aspx.designer.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductMapping.aspx.cs">
+      <DependentUpon>ProductMapping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductMapping.aspx.designer.cs">
+      <DependentUpon>ProductMapping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporter.aspx.cs">
+      <DependentUpon>Reporter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporter.aspx.designer.cs">
+      <DependentUpon>Reporter.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Common.cs-CZ.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Common.cs-CZ.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Common.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Common.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Headers.cs-CZ.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Headers.cs-CZ.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Headers.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Headers.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Validators.cs-CZ.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Validators.cs-CZ.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Validators.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Validators.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Themes\Default\Styles.css" />
+    <Content Include="Controls\MasterHeader.ascx" />
+    <Content Include="Controls\UntranslatedText.ascx" />
+    <Content Include="Localization\Default.aspx" />
+    <Content Include="Localization\images\MenuHighlight.png" />
+    <Content Include="Localization\images\VertGradient.png" />
+    <Content Include="Localization\images\VertGradient40.png" />
+    <Content Include="Localization\LocalizeForm.css" />
+    <Content Include="App_LocalResources\LoginPage.aspx.cs-CZ.resx" />
+    <Content Include="App_LocalResources\LoginPage.aspx.resx" />
+    <Content Include="Controls\App_LocalResources\MasterHeader.ascx.cs-CZ.resx" />
+    <Content Include="Controls\App_LocalResources\MasterHeader.ascx.resx" />
+    <Content Include="Controls\App_LocalResources\UntranslatedText.ascx.cs-CZ.resx" />
+    <Content Include="Controls\App_LocalResources\UntranslatedText.ascx.resx" />
+    <Content Include="Controls\App_LocalResources\AdminProducts.ascx.resx">
+    </Content>
+    <Content Include="Controls\App_LocalResources\AdminProducts.ascx.cs-CZ.resx" />
+    <Content Include="Controls\App_LocalResources\AdminProductsImport.ascx.resx">
+    </Content>
+    <Content Include="Controls\App_LocalResources\AdminProductsImport.ascx.cs-CZ.resx" />
+    <Content Include="Controls\App_LocalResources\AdminChannels.ascx.resx">
+    </Content>
+    <Content Include="Controls\App_LocalResources\AdminChannels.ascx.cs-CZ.resx" />
+    <Content Include="Controls\App_LocalResources\AdminCategories.ascx.resx">
+    </Content>
+    <Content Include="Controls\App_LocalResources\AdminCategories.ascx.cs-CZ.resx" />
+    <Content Include="Controls\App_LocalResources\AdminUsers.ascx.resx">
+    </Content>
+    <Content Include="Controls\App_LocalResources\AdminUsers.ascx.cs-CZ.resx" />
+    <Content Include="Controls\App_LocalResources\AdminChannelsMapping.ascx.resx">
+    </Content>
+    <Content Include="Controls\App_LocalResources\AdminChannelsMapping.ascx.cs-CZ.resx" />
+    <Content Include="Controls\App_LocalResources\AdminProductMapping.ascx.cs-CZ.resx" />
+    <Content Include="Controls\App_LocalResources\AdminProductMapping.ascx.resx" />
+    <Content Include="Controls\App_LocalResources\AdminProductDetails.ascx.resx">
+    </Content>
+    <Content Include="Controls\App_LocalResources\AdminProductDetails.ascx.cs-CZ.resx" />
+    <Content Include="Controls\App_LocalResources\ProductPrices.ascx.resx">
+    </Content>
+    <Content Include="Controls\App_LocalResources\ProductPrices.ascx.cs-CZ.resx" />
+    <Content Include="Controls\App_LocalResources\AdminLog.ascx.resx">
+    </Content>
+    <Content Include="Controls\App_LocalResources\AdminLog.ascx.cs-CZ.resx" />
+    <Content Include="App_LocalResources\Default.aspx.resx">
+    </Content>
+    <Content Include="App_LocalResources\Default.aspx.cs-CZ.resx" />
+    <Content Include="Controls\App_LocalResources\ChartExporter.ascx.cs-CZ.resx" />
+    <Content Include="Controls\App_LocalResources\ChartExporter.ascx.resx">
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Canon.Data\Canon.Data.csproj">
+      <Project>{A41F4B82-88D7-464C-8B08-F9F8FD3FC2BF}</Project>
+      <Name>Canon.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Memos.Administration\Memos.Administration.csproj">
+      <Project>{FE1CFFB2-8EA1-4874-B43B-A7466E51A0EF}</Project>
+      <Name>Memos.Administration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Memos.Framework\Memos.Framework.csproj">
+      <Project>{2DFAC4FA-2DE4-46B4-AB18-9E42DF464CE2}</Project>
+      <Name>Memos.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Memos.Import\Memos.Import.csproj">
+      <Project>{5A5F254E-AF50-4F94-A51A-3A9C17B2B692}</Project>
+      <Name>Memos.Import</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Administration.aspx" />
+    <Content Include="App_Themes\Default\Controls.skin" />
+    <Content Include="App_Themes\Default\Dev\Images\dvPagerPanelBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtButtonBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtButtonBackDis.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtButtonCheckedBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtButtonEditButtonBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtButtonEditButtonBackDis.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtButtonHoverBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtButtonPressedBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarButtonBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarButtonHoverBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarButtonPressedBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarFNNextYear.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarFNPrevYear.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarFootBtn.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarFootBtnH.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarFootBtnP.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarHeader.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarNextMonth.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarNextMonth.png" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarNextMonthDisabled.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarNextMonthDisabled.png" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarNextYear.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarNextYear.png" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarNextYearDisabled.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarNextYearDisabled.png" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarPrevMonth.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarPrevMonth.png" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarPrevMonthDisabled.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarPrevMonthDisabled.png" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarPrevYear.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarPrevYear.png" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarPrevYearDisabled.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCalendarPrevYearDisabled.png" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCheckBoxOff.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCheckBoxOn.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtCheckBoxUndefined.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtDropDown.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtDropDownButtonHoverBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtDropDownButtonPressedBac.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtDropDownButtonPressedBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtDropDownDisabled.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtEllipsis.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtEllipsisDisabled.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtError.png" />
+    <Content Include="App_Themes\Default\Dev\Images\edtRadioButtonOff.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtRadioButtonOn.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtSpinDecBtnBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtSpinEditDecrementImage.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtSpinEditDecrementImageDisabled.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtSpinEditIncrementImage.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtSpinEditIncrementImageDisabled.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtSpinEditLargeDecImage.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtSpinEditLargeDecImageDisabled.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtSpinEditLargeIncImage.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtSpinEditLargeIncImageDisabled.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtSpinIncBtnBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtSpinIncBtnHBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtSpinIncBtnPBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtSpinLargeIncBtnBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtSpinLargeIncBtnHBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\edtSpinLargeIncBtnPBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\fcadd.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcaddhot.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcgroupaddcondition.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcgroupaddgroup.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcgroupand.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcgroupnotand.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcgroupnotor.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcgroupor.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcgroupremove.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcopany.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcopbegin.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcopbetween.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcopblank.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcopcontain.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcopend.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcopequal.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcopgreater.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcopgreaterorequal.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcopless.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcoplessorequal.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcoplike.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcopnotany.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcopnotbetween.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcopnotblank.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcopnotcontain.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcopnotequal.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcopnotlike.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcremove.png" />
+    <Content Include="App_Themes\Default\Dev\Images\fcremovehot.png" />
+    <Content Include="App_Themes\Default\Dev\Images\gvCollapsedButton.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\gvCollapsedButton.png" />
+    <Content Include="App_Themes\Default\Dev\Images\gvDetailCollapsedButton.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\gvDetailCollapsedButton.png" />
+    <Content Include="App_Themes\Default\Dev\Images\gvDetailExpandedButton.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\gvDetailExpandedButton.png" />
+    <Content Include="App_Themes\Default\Dev\Images\gvDragAndDropArrowDown.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\gvDragAndDropArrowUp.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\gvDragAndDropHideColumn.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\gvExpandedButton.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\gvExpandedButton.png" />
+    <Content Include="App_Themes\Default\Dev\Images\gvFilterRowButton.png" />
+    <Content Include="App_Themes\Default\Dev\Images\gvGroupPanelBackground.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\gvGroupPanelSelBackground.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\gvGroupRowBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\gvHeaderBackground.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\gvHeaderFilter.png" />
+    <Content Include="App_Themes\Default\Dev\Images\gvHeaderFilterActive.png" />
+    <Content Include="App_Themes\Default\Dev\Images\gvHeaderSortDown.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\gvHeaderSortDown.png" />
+    <Content Include="App_Themes\Default\Dev\Images\gvHeaderSortUp.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\gvHeaderSortUp.png" />
+    <Content Include="App_Themes\Default\Dev\Images\gvLoadingOnStatusBar.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\gvParentGroupRows.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\hlTail.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\Loading.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\mHorizontalPopOut.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\mHorizontalPopOut.png" />
+    <Content Include="App_Themes\Default\Dev\Images\mHorizontalPopOutH.png" />
+    <Content Include="App_Themes\Default\Dev\Images\mItemBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\mItemBack.png" />
+    <Content Include="App_Themes\Default\Dev\Images\mItemBackH.png" />
+    <Content Include="App_Themes\Default\Dev\Images\mItemChecked.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\mItemHBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\mItemSBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\mLargeItemBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\mLargeItemHBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\mLargeItemSBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\mSeparatorBack.png" />
+    <Content Include="App_Themes\Default\Dev\Images\mSubMenuItem.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\mSubMenuItemChecked.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\mVerticalPopOut.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\mVerticalPopOut.png" />
+    <Content Include="App_Themes\Default\Dev\Images\mVItemBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\mVItemHBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\mVItemSBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\mVSeparatorBack.png" />
+    <Content Include="App_Themes\Default\Dev\Images\nbCollapse.png" />
+    <Content Include="App_Themes\Default\Dev\Images\nbExpand.png" />
+    <Content Include="App_Themes\Default\Dev\Images\nbHeaderBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\nbHeaderBack.png" />
+    <Content Include="App_Themes\Default\Dev\Images\nbHeaderHBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\nbHeaderHBack.png" />
+    <Content Include="App_Themes\Default\Dev\Images\ncBackToTop.png" />
+    <Content Include="App_Themes\Default\Dev\Images\ncTail.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\pAll.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\pAll.png" />
+    <Content Include="App_Themes\Default\Dev\Images\pAllDisabled.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\pAllDisabled.png" />
+    <Content Include="App_Themes\Default\Dev\Images\pcCloseButton.png" />
+    <Content Include="App_Themes\Default\Dev\Images\pcContentBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\pcContentWithTabBottomBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\pcFooterBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\pcHeaderBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\pcModalBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\pcSizeGrip.png" />
+    <Content Include="App_Themes\Default\Dev\Images\pFirst.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\pFirst.png" />
+    <Content Include="App_Themes\Default\Dev\Images\pFirstDisabled.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\pFirstDisabled.png" />
+    <Content Include="App_Themes\Default\Dev\Images\pLast.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\pLast.png" />
+    <Content Include="App_Themes\Default\Dev\Images\pLastDisabled.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\pLastDisabled.png" />
+    <Content Include="App_Themes\Default\Dev\Images\pNext.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\pNext.png" />
+    <Content Include="App_Themes\Default\Dev\Images\pNextDisabled.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\pNextDisabled.png" />
+    <Content Include="App_Themes\Default\Dev\Images\pPrev.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\pPrev.png" />
+    <Content Include="App_Themes\Default\Dev\Images\pPrevDisabled.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\pPrevDisabled.png" />
+    <Content Include="App_Themes\Default\Dev\Images\rpBottomEdge.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\rpBottomLeftCorner.png" />
+    <Content Include="App_Themes\Default\Dev\Images\rpBottomRightCorner.png" />
+    <Content Include="App_Themes\Default\Dev\Images\rpContentBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\rpHeaderBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\rpHeaderLeftEdge.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\rpHeaderRightEdge.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\rpLeftEdge.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\rpLeftRightEdge.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\rpNoHeaderTopEdge.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\rpNoHeaderTopLeftCorner.png" />
+    <Content Include="App_Themes\Default\Dev\Images\rpNoHeaderTopRightCorner.png" />
+    <Content Include="App_Themes\Default\Dev\Images\rpRightEdge.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\rpTopEdge.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\rpTopLeftCorner.png" />
+    <Content Include="App_Themes\Default\Dev\Images\rpTopRightCorner.png" />
+    <Content Include="App_Themes\Default\Dev\Images\smLevel0Back.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\tcATabBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\tcATabBottomBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\tcContentBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\tcHTabBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\tcHTabBottomBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\tcTabBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\tcTabBottomBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\tiBackToTop.png" />
+    <Content Include="App_Themes\Default\Dev\Images\tiHeaderBack.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\WindowResizer.gif" />
+    <Content Include="App_Themes\Default\Dev\Images\WindowResizer.png" />
+    <Content Include="App_Themes\Default\Dev\styles.css" />
+    <Content Include="App_Themes\Default\Images\banner.jpg" />
+    <Content Include="App_Themes\Default\Images\change-password.png" />
+    <Content Include="App_Themes\Default\Images\cooperation-denied.png" />
+    <Content Include="App_Themes\Default\Images\cooperation-no.png" />
+    <Content Include="App_Themes\Default\Images\cooperation-received.png" />
+    <Content Include="App_Themes\Default\Images\cooperation-sent.png" />
+    <Content Include="App_Themes\Default\Images\cooperation-set.png" />
+    <Content Include="App_Themes\Default\Images\crown-small-ca.png" />
+    <Content Include="App_Themes\Default\Images\crown-small-sa.png" />
+    <Content Include="App_Themes\Default\Images\crown-small-user.png" />
+    <Content Include="App_Themes\Default\Images\crown_ca.png" />
+    <Content Include="App_Themes\Default\Images\crown_sa.png" />
+    <Content Include="App_Themes\Default\Images\crown_user.png" />
+    <Content Include="App_Themes\Default\Images\delete.png" />
+    <Content Include="App_Themes\Default\Images\header-background.png" />
+    <Content Include="App_Themes\Default\Images\language-cz.png" />
+    <Content Include="App_Themes\Default\Images\language-de.png" />
+    <Content Include="App_Themes\Default\Images\language-en.png" />
+    <Content Include="App_Themes\Default\Images\language-small-cz.png" />
+    <Content Include="App_Themes\Default\Images\language-small-de.png" />
+    <Content Include="App_Themes\Default\Images\language-small-en.png" />
+    <Content Include="App_Themes\Default\Images\link-add.png" />
+    <Content Include="App_Themes\Default\Images\link-details.png" />
+    <Content Include="App_Themes\Default\Images\link-info.png" />
+    <Content Include="App_Themes\Default\Images\link-remove.png" />
+    <Content Include="App_Themes\Default\Images\link-scheduler.png" />
+    <Content Include="App_Themes\Default\Images\logo.png" />
+    <Content Include="App_Themes\Default\Images\menu-background-gray.png" />
+    <Content Include="App_Themes\Default\Images\menu-background-orange-selected.png" />
+    <Content Include="App_Themes\Default\Images\menu-background-orange.png" />
+    <Content Include="App_Themes\Default\Images\menu-background.png" />
+    <Content Include="App_Themes\Default\Images\menu-border-grey.png" />
+    <Content Include="App_Themes\Default\Images\menu-border.png" />
+    <Content Include="App_Themes\Default\Images\menu-separator.png" />
+    <Content Include="App_Themes\Default\Images\message_error.png" />
+    <Content Include="App_Themes\Default\Images\message_success.png" />
+    <Content Include="App_Themes\Default\Images\new-actuality.png" />
+    <Content Include="App_Themes\Default\Images\phone-cellular.png" />
+    <Content Include="App_Themes\Default\Images\phone-home.png" />
+    <Content Include="App_Themes\Default\Images\process-finished.png" />
+    <Content Include="App_Themes\Default\Images\process-first-phase.png" />
+    <Content Include="App_Themes\Default\Images\process-not-started.png" />
+    <Content Include="App_Themes\Default\Images\process-second-phase.png" />
+    <Content Include="App_Themes\Default\Images\process-third-phase.png" />
+    <Content Include="App_Themes\Default\Images\reservation-accepted.png" />
+    <Content Include="App_Themes\Default\Images\reservation-declined.png" />
+    <Content Include="App_Themes\Default\Images\reservation-finished.png" />
+    <Content Include="App_Themes\Default\Images\reservation-info-needed.png" />
+    <Content Include="App_Themes\Default\Images\reservation-offered.png" />
+    <Content Include="App_Themes\Default\Images\reservation-ordered.png" />
+    <Content Include="App_Themes\Default\Images\reservation-report-accepted.png" />
+    <Content Include="App_Themes\Default\Images\reservation-report-declined.png" />
+    <Content Include="App_Themes\Default\Images\reservation-reported.png" />
+    <Content Include="App_Themes\Default\Images\reservation-requested.png" />
+    <Content Include="App_Themes\Default\Images\reserved-clock.png" />
+    <Content Include="App_Themes\Default\Images\reserved-partly-clock.png" />
+    <Content Include="App_Themes\Default\Images\send-mail-small.png" />
+    <Content Include="App_Themes\Default\Images\send-mail.png" />
+    <Content Include="App_Themes\Default\Images\state-active.png" />
+    <Content Include="App_Themes\Default\Images\state-inactive.png" />
+    <Content Include="App_Themes\Default\Images\wizard-arrow-active.png" />
+    <Content Include="App_Themes\Default\Images\wizard-arrow-inactive.png" />
+    <Content Include="App_Themes\Default\Images\wizard-criteria-inactive.png" />
+    <Content Include="App_Themes\Default\Images\wizard-criteria.png" />
+    <Content Include="App_Themes\Default\Images\wizard-devices-inactive.png" />
+    <Content Include="App_Themes\Default\Images\wizard-devices.png" />
+    <Content Include="App_Themes\Default\Images\wizard-reservation-inactive.png" />
+    <Content Include="App_Themes\Default\Images\wizard-reservation.png" />
+    <Content Include="App_Themes\Default\Images\wizard-templates-inactive.png" />
+    <Content Include="App_Themes\Default\Images\wizard-templates.png" />
+    <Content Include="ChannelMapping.aspx" />
+    <Content Include="Charts.aspx" />
+    <Content Include="Controls\AdminCategories.ascx" />
+    <Content Include="Controls\AdminChannels.ascx" />
+    <Content Include="Controls\AdminChannelsMapping.ascx" />
+    <Content Include="Controls\AdminLog.ascx" />
+    <Content Include="Controls\AdminProductDetails.ascx" />
+    <Content Include="Controls\AdminProductMapping.ascx" />
+    <Content Include="Controls\AdminProducts.ascx" />
+    <Content Include="Controls\AdminProductsImport.ascx" />
+    <Content Include="Controls\AdminUsers.ascx" />
+    <Content Include="Controls\ChartExporter.ascx" />
+    <Content Include="Controls\LogPopupControl.ascx" />
+    <Content Include="Controls\ProductPrices.ascx" />
+    <Content Include="Global.asax" />
+    <Content Include="Main.Master" />
+    <Content Include="ProductDetails.aspx" />
+    <Content Include="ProductMapping.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Default\Reports.css" />
+    <Content Include="Controls\AdminChangePassword.ascx" />
+    <Content Include="Controls\AjaxTest.ascx" />
+    <Content Include="Controls\AdminDistributorsImport.ascx" />
+    <Content Include="Controls\AdminDistributorsImporter.ascx" />
+    <Content Include="Controls\AdminDistributorsManage.ascx" />
+    <Content Include="Controls\AdminGroups.ascx" />
+    <Content Include="Controls\AdminPricesImport.ascx" />
+    <Content Include="Controls\AdminPricesImporter.ascx" />
+    <Content Include="Controls\AdminPricesImportsLog.ascx" />
+    <Content Include="Controls\AdminResellersImport.ascx" />
+    <Content Include="Controls\AdminResellersImporter.ascx" />
+    <Content Include="Controls\AdminResellersImportsLog.ascx" />
+    <Content Include="Controls\CanonCalendar.ascx" />
+    <Content Include="Controls\SearchBox.ascx" />
+    <Content Include="JavaScript\Memos_SearchBox.js" />
+    <Content Include="JavaScript\Portamenta_Core.js" />
+    <Content Include="JavaScript\Portamenta_Special.js" />
+    <Content Include="Log4Net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pom.aspx" />
+    <Content Include="Reporter.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Code\Reporter\PivotTable.xsc">
+      <DependentUpon>PivotTable.xsd</DependentUpon>
+    </None>
+    <None Include="Code\Reporter\PivotTable.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PivotTable.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Code\Reporter\PivotTable.xss">
+      <DependentUpon>PivotTable.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Uploaded\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>55555</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/CanonWebApp</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
